@@ -1,11 +1,11 @@
-type Product = {name: string, price: number};
+type CartProduct = {name: string, price: number};
 type OrderStatus = 'open' | 'closed';
 
 export class ShoppingCartLegacy {
-  private readonly _products: Product[] = [];
+  private readonly _products: CartProduct[] = [];
   private _orderStatus: OrderStatus = 'open';
 
-  get products(): Readonly<Product[]> {
+  get products(): Readonly<CartProduct[]> {
     return this._products;
   }
 
@@ -13,7 +13,7 @@ export class ShoppingCartLegacy {
     return this._orderStatus;
   }
 
-  addProduct(product: Product): void {
+  addProduct(product: CartProduct): void {
     this._products.push(product);
   }
 
